@@ -1,31 +1,32 @@
 import { useState } from 'react'
 import './App.css'
-import { Card, CardBody, CardHeader } from 'react-bootstrap'
+import { Card, CardBody, CardHeader, Container } from 'react-bootstrap';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <h1>Portfolio</h1>
-      </div>
-      <div>
-        <div className='d-flex'>
-          <Card>
-            <CardHeader>Experience</CardHeader>
+      <Container>
+        <h1>Melanie Bermudez</h1>
+        <p>Front-End Developer</p>
+      </Container>
+      
+        <Container className='d-flex justify-content-evenly'>
+          <Card className='border-box m-2' >
+            <CardHeader >Experience</CardHeader>
             <CardBody>Insert experience</CardBody>
           </Card>
-          <Card>
+          <Card className='border-box m-2'> 
             <CardHeader>Education</CardHeader>
             <CardBody>Insert Education</CardBody>
           </Card>
-          <Card>
-            <CardHeader>Volunteer Work</CardHeader>
+          <Card className='border-box m-2'>
+            <CardHeader>Volunteer</CardHeader>
             <CardBody>Insert Work</CardBody>
           </Card>
-        </div>
-      </div>
+        </Container>
+      
     </>
   )
 }
