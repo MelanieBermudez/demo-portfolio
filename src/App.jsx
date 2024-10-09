@@ -15,12 +15,13 @@ function App() {
   return (
     <>
       <header className='header-box'>
-        <Nav className='justify-content-end nav-row'>
+        <Nav className='justify-content-end nav-row'
+         activeKey="/home">
           <NavItem>
-            <NavLink>Resume</NavLink>
+            <NavLink href='#experience'>Resume</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink>Contact</NavLink>
+            <NavLink href='#contact'>Contact</NavLink>
           </NavItem>
         </Nav>
       </header>
@@ -30,12 +31,10 @@ function App() {
       </Container>
 
       <Container className='d-flex pb-3 justify-content-evenly'>
-        <blockquote>Creativity and Innovation will preserve</blockquote>
+        <blockquote><q>Creativity and Innovation will preserve</q></blockquote>
       </Container>
 
-
-
-      <Container className='pt-4 info-box'>
+      <Container className='pt-4 info-box' id='experience'>
         <h2>
           Experience
         </h2>
@@ -56,7 +55,7 @@ function App() {
               </li>
               <li>Implemented the latest industry trends and best practices to optimize front-end architecture and improve
                 application scalability including test plans and decommission processes.</li>
-              <li>React, JavaScript, HTML, CSS, Bootstrap 5, Node JS, Workfront, Abstract, Azure, Git, Copilot, Vite, Figma, Agile/Scrum methodologies, Storybook</li>
+              <li>React, JavaScript, HTML, CSS, Bootstrap 5, Node JS, Workfront, Abstract, Azure, Git, Copilot, Vite, Figma, Agile/Scrum methodologies, Storybook, BEM</li>
             </ul>
           </CardBody>
         </Card>
@@ -89,7 +88,7 @@ while balancing speed, priority, and scope. Manual debugging and testing of scop
               Develop tools to track academic and extra-curricular activities carried out within the school. Set up a Moodle platform for online cultural courses offered by the University
               </li>
               <li>
-              Handle university’s cultural program social media channels like Facebook and Instagram. Plan and create engaging content, respond to messages, launch and monitor performance of advertisements.
+              Handle university&apos;s cultural program social media channels like Facebook and Instagram. Plan and create engaging content, respond to messages, launch and monitor performance of advertisements.
               </li>
               <li>Microsoft 365, SQL Server, Google Ads, Moodle</li>
             </ul>
@@ -100,6 +99,40 @@ while balancing speed, priority, and scope. Manual debugging and testing of scop
       <Container className='pt-4 info-box'>
         <h2>
           Education
+        </h2>
+        <Card className='border-box m-2 text-start' >
+          <CardHeader >Costa Rica Institute of Technology</CardHeader>
+          <CardBody>
+            <ul >
+              <li>
+                Bachelors in Computer Engineering   <i>Class of 2021</i>
+              </li>
+            </ul>
+          </CardBody>
+        </Card>
+      </Container>
+
+      <Container className='pt-4 info-box'>
+        <h2>
+         Languages
+        </h2>
+        <Card className='border-box m-2 text-start' >
+          <CardBody>
+            <ul >
+              <li>
+               Spanish  <i>Native</i>
+              </li>
+              <li>
+               French  <i>Basic</i>
+              </li>
+            </ul>
+          </CardBody>
+        </Card>
+      </Container>
+
+      <Container className='pt-4 info-box'>
+        <h2>
+          Certifications
         </h2>
         <Card className='border-box m-2 text-start' >
           <CardHeader >Costa Rica Institute of Technology</CardHeader>
@@ -130,10 +163,16 @@ while balancing speed, priority, and scope. Manual debugging and testing of scop
         </Card>
       </Container>
 
-      <footer className='pt-4 '>
+      <Container className='pt-4' id='contact'>
+        <h5>Contact Information</h5>
+        <p>mebeca19@gmail.com</p>
+        <p>+1 973 494 6734</p>
+      </Container>
+
+      {/* <footer className='pt-4 '>
         <p>This is a personal website</p>
         <p>All rights reserved</p>
-      </footer>
+      </footer> */}
 
     </>
   )
