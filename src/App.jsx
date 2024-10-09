@@ -1,22 +1,55 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
-import { Card, CardBody, CardHeader, Container, Nav, Navbar, NavItem, NavLink } from 'react-bootstrap';
+import { Button, Card, CardBody, CardHeader, Container, Nav, NavItem, NavLink } from 'react-bootstrap';
 import data from "../data.json"
 function App() {
-  const [user, setUser] = useState('');
 
-  const isAdmin = () => {
-    if (user == 'admin') {
-      setUser(data.user.name);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
     }
+  }, [isDarkMode]);
 
-  }
+  useEffect(() => {
+    const savedMode = localStorage.getItem('darkMode');
+    if (savedMode === 'true') {
+      setIsDarkMode(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('darkMode', isDarkMode.toString());
+  }, [isDarkMode]);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    setIsDarkMode(mediaQuery.matches);
+
+    const handler = (e) => {
+      setIsDarkMode(e.matches);
+    };
+
+    mediaQuery.addEventListener('change', handler);
+    return () => mediaQuery.removeEventListener('change', handler);
+  }, []);
 
   return (
     <>
       <header className='header-box'>
-        <Nav className='justify-content-end nav-row'
-         activeKey="/home">
+        <div className='d-flex justify-content-between w-100 align-items-center'>
+          <Button onClick={toggleDarkMode} variant={isDarkMode ? "outline-light" : "outline-dark"} >
+            {isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+          </Button>
+          <Nav className='justify-content-end'
+          activeKey="/home">
           <NavItem>
             <NavLink href='#experience'>Resume</NavLink>
           </NavItem>
@@ -24,8 +57,9 @@ function App() {
             <NavLink href='#contact'>Contact</NavLink>
           </NavItem>
         </Nav>
+        </div>
       </header>
-      <Container className='pt-2'>
+      <Container className='pt-2 '>
         <h1>Melanie Bermudez</h1>
         <p>Front-End Developer</p>
       </Container>
@@ -64,14 +98,14 @@ function App() {
           <CardBody>
             <ul >
               <li>
-              Partner with product owner and product designer to develop and refine technical requirements
+                Partner with product owner and product designer to develop and refine technical requirements
               </li>
               <li>
-              Collaborate in a fast-paced agile team to design, scope and build a new software platform
+                Collaborate in a fast-paced agile team to design, scope and build a new software platform
               </li>
               <li>
-              Build end-to-end web-based component application, integrate with APIs in Java and create SQL model
-while balancing speed, priority, and scope. Manual debugging and testing of scope.
+                Build end-to-end web-based component application, integrate with APIs in Java and create SQL model
+                while balancing speed, priority, and scope. Manual debugging and testing of scope.
               </li>
               <li>React, JavaScript, HTML, CSS, Material UI, Java, Maven, SQL, Git, Jira, Confluence, Agile/Scrum methodologies, Storybook</li>
             </ul>
@@ -82,13 +116,13 @@ while balancing speed, priority, and scope. Manual debugging and testing of scop
           <CardBody>
             <ul >
               <li>
-              Gathered, reviewed and organized data from Computer Science school to reapply for the SINAES international accreditation program.
+                Gathered, reviewed and organized data from Computer Science school to reapply for the SINAES international accreditation program.
               </li>
               <li>
-              Develop tools to track academic and extra-curricular activities carried out within the school. Set up a Moodle platform for online cultural courses offered by the University
+                Develop tools to track academic and extra-curricular activities carried out within the school. Set up a Moodle platform for online cultural courses offered by the University
               </li>
               <li>
-              Handle university&apos;s cultural program social media channels like Facebook and Instagram. Plan and create engaging content, respond to messages, launch and monitor performance of advertisements.
+                Handle university&apos;s cultural program social media channels like Facebook and Instagram. Plan and create engaging content, respond to messages, launch and monitor performance of advertisements.
               </li>
               <li>Microsoft 365, SQL Server, Google Ads, Moodle</li>
             </ul>
@@ -114,16 +148,16 @@ while balancing speed, priority, and scope. Manual debugging and testing of scop
 
       <Container className='pt-4 info-box'>
         <h2>
-         Languages
+          Languages
         </h2>
         <Card className='border-box m-2 text-start' >
           <CardBody>
             <ul >
               <li>
-               Spanish  <i>Native</i>
+                Spanish  <i>Native</i>
               </li>
               <li>
-               French  <i>Basic</i>
+                French  <i>Basic</i>
               </li>
             </ul>
           </CardBody>
