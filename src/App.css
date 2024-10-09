@@ -11,6 +11,13 @@
   padding: 2em;
 }
 
+.logo-img{
+  width: 15vh;
+  height: 20vh;
+  border-radius: 50%;
+}
+
+
 .read-the-docs {
   color: #888;
 }
@@ -22,5 +29,17 @@
 .header-box{
   min-height: 20vh;
 
+}
+
+.contact-link {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  
+  background-color: #0A66C2;
+  opacity: 0.9;
+  
 }
 
