@@ -1,12 +1,9 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import { Button, Card, CardBody, CardHeader, Container, Nav, NavItem, NavLink } from 'react-bootstrap';
-import { Link } from 'react-router-dom';  // React Router Link for navigation
 import { FaLinkedin} from 'react-icons/fa';
 
 
-
-import data from "../data.json"
 function App() {
 
   const [isDarkMode, setIsDarkMode] = useState(false);
