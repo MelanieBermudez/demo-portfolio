@@ -1,8 +1,9 @@
 import React from "react";
 import { useState, useEffect } from 'react'
 import './App.css'
-import { Button, Card, CardBody, CardHeader, Container, Nav, NavItem, NavLink } from 'react-bootstrap';
-import { FaLinkedin} from 'react-icons/fa';
+import { Button, Card, CardHeader, CardBody, Container, Nav, NavItem, NavLink } from 'react-bootstrap';
+import { FaLinkedin } from 'react-icons/fa';
+import InfoCard from "./components/card/Card";
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
     setIsDarkMode(!isDarkMode);
   };
 
-  function exampleJson (arr) {
+  function exampleJson(arr) {
     let newJson = {}
 
     arr.forEach(element => {
@@ -25,9 +26,9 @@ function App() {
     return newJson;
   }
 
-  exampleJson([{id:123,name:"Jon"},{id:124,name:"Mel"}, ])
+  exampleJson([{ id: 123, name: "Jon" }, { id: 124, name: "Mel" },])
 
- 
+
   useEffect(() => {
     if (isDarkMode) {
       document.body.classList.add('dark-mode');
@@ -91,128 +92,41 @@ function App() {
         <h2>
           Professional Experience
         </h2>
-        <Card className='border-box m-2 text-start' >
-          <CardHeader>Accenture</CardHeader>
-          <CardBody>
-            <ul >
-              <li>
-                Developed and maintained responsive web applications using React
-              </li>
-              <li>
-                Collaborated in Agile/Scrum teams, participating in daily stand-ups, sprint planning, and retrospectives to drive
-                project success
-              </li>
-              <li>
-                Turn static Photoshop designs into working browser-based web pages or emails
-              </li>
-              <li>Implemented the latest industry trends and best practices to optimize front-end architecture and improve
-                application scalability including test plans and decommission processes</li>
-              <li>React, JavaScript, HTML, CSS, Bootstrap 5, Node JS, Workfront, Abstract, Azure, Git, Copilot, Vite, Figma, Agile/Scrum methodologies, Storybook, BEM</li>
-            </ul>
-          </CardBody>
-        </Card>
-        <Card className='border-box m-2 text-start' >
-          <CardHeader >Kareo Inc</CardHeader>
-          <CardBody>
-            <ul >
-              <li>
-                Partner with product owner and product designer to develop and refine technical requirements
-              </li>
-              <li>
-                Collaborate in a fast-paced agile team to design, scope and build a new software platform
-              </li>
-              <li>
-                Build end-to-end web-based component application, integrate with APIs in Java and create SQL model
-                while balancing speed, priority, and scope. Manual debugging and testing of scope
-              </li>
-              <li>React, JavaScript, HTML, CSS, Material UI, Java, Maven, SQL, Git, Jira, Confluence, Agile/Scrum methodologies, Storybook</li>
-            </ul>
-          </CardBody>
-        </Card>
-        <Card className='border-box m-2 text-start' >
-          <CardHeader >Costa Rica Institute of Technology</CardHeader>
-          <CardBody>
-            <ul >
-              <li>
-                Gathered, reviewed and organized data from Computer Science school to reapply for the SINAES international accreditation program
-              </li>
-              <li>
-                Develop tools to track academic and extra-curricular activities carried out within the school. Set up a Moodle platform for online cultural courses offered by the University
-              </li>
-              <li>
-                Handle university&apos;s cultural program social media channels like Facebook and Instagram. Plan and create engaging content, respond to messages, launch and monitor performance of advertisements
-              </li>
-              <li>Microsoft 365, SQL Server, Google Ads, Moodle</li>
-            </ul>
-          </CardBody>
-        </Card>
+        <InfoCard headerText={'Acccenture'} bodyTextList={'tex tex tex'} />
+
+        <InfoCard headerText={'Kareoo'} bodyTextList={'text thsisss'} />
+
+        <InfoCard headerText={'Grupo ICE'} bodyTextList={'hehehhhhd'} />
+
+       
       </Container>
 
       <Container className='pt-4 info-box'>
         <h2>
           Education
         </h2>
-        <Card className='border-box m-2 text-start' >
-          <CardHeader >Costa Rica Institute of Technology</CardHeader>
-          <CardBody>
-            <ul >
-              <li>
-                Bachelors in Computer Engineering   <i>Class of 2021</i>
-              </li>
-            </ul>
-          </CardBody>
-        </Card>
+       <InfoCard headerText={'Costa Rica Institute of Technology'}  bodyTextList={'hehehhhhd'}/>
       </Container>
 
       <Container className='pt-4 info-box'>
         <h2>
           Languages
         </h2>
-        <Card className='border-box m-2 text-start' >
-          <CardBody>
-            <ul >
-              <li>
-                Spanish  <i>Native</i>
-              </li>
-              <li>
-                French  <i>Basic</i>
-              </li>
-            </ul>
-          </CardBody>
-        </Card>
+        <InfoCard headerText={'Costa Rica Institute of Technology'}  bodyTextList={'hehehhhhd'}/>
       </Container>
 
       <Container className='pt-4 info-box'>
         <h2>
           Certifications
         </h2>
-        <Card className='border-box m-2 text-start' >
-          <CardHeader >Costa Rica Institute of Technology</CardHeader>
-          <CardBody>
-            <ul >
-              <li>
-                Bachelors in Computer Engineering   <i>Class of 2021</i>
-              </li>
-            </ul>
-          </CardBody>
-        </Card>
+         <InfoCard headerText={'Costa Rica Institute of Technology'}  bodyTextList={'hehehhhhd'}/>
       </Container>
 
       <Container className='pt-4 info-box'>
         <h2>
           Volunteer Work
         </h2>
-        <Card className='border-box m-2 text-start' >
-          <CardHeader >Coder Dojo</CardHeader>
-          <CardBody>
-            <ul >
-              <li>
-                Guide children in different activities that demonstrate the basic concepts of programming.
-                <b>35 hrs</b>
-              </li>
-            </ul>
-          </CardBody>
-        </Card>
+        <InfoCard headerText={'Costa Rica Institute of Technology'}  bodyTextList={'hehehhhhd'}/>
       </Container>
 
       <Container className='pt-4' id='contact'>
@@ -253,11 +167,12 @@ function App() {
         </div>
       </Container>
 
-      {/* <footer className='pt-4 '>
-        <p>This is a personal website</p>
-        <p>All rights reserved</p>
-      </footer> */}
-    
+      <footer className='pt-4 d-flex justify-content-around'>
+        
+        <p>Made by Melanie Bermudez</p>
+        <p>2024</p>
+      </footer>
+
 
     </>
   )
