@@ -87,5 +87,47 @@ function sumAll(arr){
        totalNumber+=arr[i];
     }
     return totalNumber;
-
 }
+
+function sortAscendent(arr){
+    for(let i=0; i < arr.length; i++){
+      for(let j=i+1; j< arr.length; j++){
+        if(arr[j] < arr[i]){ //> for descendent
+          let temp=arr[i];
+          arr[i] = arr[j];
+          arr[j] =temp;
+        }
+
+      }
+    }
+    console.log(arr);
+    return arr;
+  }
+  sortAscendent([5,3,6,1,9])
+
+  function reverseString(str) {
+    console.log(str.split('').reverse().join(''));
+    return str.split('').reverse().join('');
+    
+  }
+  reverseString('hello');
+  
+  function isPalindrome(str) {
+    const cleanedStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+    return cleanedStr === cleanedStr.split('').reverse().join('');
+  }
+  
+  // Example usage
+  console.log(isPalindrome("A man a plan a canal Panama"));  // Output: true
+  
+  function fibonacci(n) {
+    if (n <= 1) return n;
+  
+    let a = 0, b = 1;
+    for (let i = 2; i <= n; i++) {
+      const temp = a + b;
+      a = b;
+      b = temp;
+    }
+    return b;
+  }

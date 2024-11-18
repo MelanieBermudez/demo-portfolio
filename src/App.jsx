@@ -27,52 +27,7 @@ function App() {
 
   exampleJson([{id:123,name:"Jon"},{id:124,name:"Mel"}, ])
 
-  function sortAscendent(arr){
-    for(let i=0; i < arr.length; i++){
-      for(let j=i+1; j< arr.length; j++){
-        if(arr[j] < arr[i]){ //> for descendent
-          let temp=arr[i];
-          arr[i] = arr[j];
-          arr[j] =temp;
-        }
-
-      }
-    }
-    console.log(arr);
-    return arr;
-  }
-  sortAscendent([5,3,6,1,9])
-
-  function reverseString(str) {
-    console.log(str.split('').reverse().join(''));
-    return str.split('').reverse().join('');
-    
-  }
-  reverseString('hello');
-  
-  function isPalindrome(str) {
-    const cleanedStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
-    return cleanedStr === cleanedStr.split('').reverse().join('');
-  }
-  
-  // Example usage
-  console.log(isPalindrome("A man a plan a canal Panama"));  // Output: true
-  
-  function fibonacci(n) {
-    if (n <= 1) return n;
-  
-    let a = 0, b = 1;
-    for (let i = 2; i <= n; i++) {
-      const temp = a + b;
-      a = b;
-      b = temp;
-    }
-    return b;
-  }
-  
-  // Example usage
-  console.log(fibonacci(6));  // Output: 8
-
+ 
   useEffect(() => {
     if (isDarkMode) {
       document.body.classList.add('dark-mode');
@@ -124,8 +79,8 @@ function App() {
       </header>
       <Container className='pt-2 '>
         {/* <img src='/profile.jpg' alt='profile image' className='logo-img'/> */}
-        <h1>Melanie Bermudez</h1>
-        <p>Front-End Developer</p>
+        <h1>Melanie Bermudez Resume</h1>
+        <h3>Front-End Developer</h3>
       </Container>
 
       <Container className='d-flex pb-3 justify-content-evenly'>
@@ -134,7 +89,7 @@ function App() {
 
       <Container className='pt-4 info-box' id='experience'>
         <h2>
-          Experience
+          Professional Experience
         </h2>
         <Card className='border-box m-2 text-start' >
           <CardHeader>Accenture</CardHeader>
@@ -269,7 +224,7 @@ function App() {
             href="mailto:mebeca19@gmail.com"  // Replace with your email
             className="contact-link"
             aria-label="Send me an email"
-            style={{ color: isDarkMode ? '#fff' : '#000' }}
+            style={{ color: isDarkMode ? '#fff' : '#1a0dab' }}
           >
             mebeca19@gmail.com
           </a>
@@ -280,7 +235,7 @@ function App() {
             href="tel:+19734946734"  // Replace with your phone number, make sure to include the country code
             className="contact-link"
             aria-label="Call me"
-            style={{ color: isDarkMode ? '#fff' : '#000' }}
+            style={{ color: isDarkMode ? '#fff' : '#1a0dab' }}
           >
             +1 973 494 6734
           </a>
